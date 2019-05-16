@@ -1,16 +1,11 @@
 # Makefile options for the INTEL compiler,not  optimized
 
 # Fortran compiler
-FC=gfortran
-F77=f77
 #FC=gfortran
-# Options for Fortran compiler for debugging:
-#FFLAGS=  -cm -O -mp1 -assume byterecl  
-#FFLAGS=  -pg -auto -debug -traceback -openmp -assume byterecl -CB #-Wl --end-group  
-#FFLAGS=  -fast -openmp   #-traceback  #-assume byterecl -CB
-FFLAGS= -ffree-line-length-512 -fbacktrace -g -fopenmp -Wall -Wextra  
-#FFLAGS=  -ipo 
-#FFLAGS=  -g -openmp -traceback
+#FFLAGS= -ffree-line-length-512 -ffpe-trap=invalid,zero,overflow -ffpe-summary=none -fbacktrace -g -fopenmp -Wall -Wextra  
+
+FC=ifort
+FFLAGS=  -O2 -g -traceback -openmp -assume byterecl -CB
 # "ranlib" command: if it is not needed, use "RANLIB=touch"
 RANLIB=ranlib
 #AR=ar

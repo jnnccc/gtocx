@@ -4,13 +4,13 @@
 !!NC.Jian jnnccc@shao.ac.cn 
 !>@date 2016-05-19 
 
-SUBROUTINE deriv1(x,dx)
+SUBROUTINE deriv1(t,x,dx)
 use module_mod
 !SSB center
 !use general_mod, only: refet_orb
 !use force_mod
 implicit none
-DOUBLE PRECISION::  r,v,f
+DOUBLE PRECISION::  t,r,v,f
 DOUBLE PRECISION::  x(6), dx(6)
 
 !write(*,*)'cccccccccccccccccccccccc'

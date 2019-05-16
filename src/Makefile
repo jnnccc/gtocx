@@ -8,14 +8,14 @@ otherlib=$(root)lib/libksg.a #spicelib/libspice.a #slateclib/libslatec.a
 #flink= -lspice -lslatec -lpgplot -lspline -lstarpac $(mkllib) $(otherlib)
 fflink= $(flink) $(mkllib) $(otherlib)
 #all: myflib myclib trsim differ_data comp_data rsrinfo
-all:gtoclib gtocx 
+all:gtoclib code_check 
 obj= force_driv.o  init.o  module.o  propag.o  read_stars.o  star_state.o
 gtoclib:$(obj)
 	ar rc $(root)lib/libgtoc.a $(obj)
 	$(RANLIB) $(root)lib/libgtoc.a     
 
-gtocx: test.o $(obj)
-	$(FC) $(FFLAGS) test.o $(obj)  $(fflink)  -o $(root)/bin/gtocx
+code_check: test.o $(obj)
+	$(FC) $(FFLAGS) test.o $(obj)  $(fflink)  -o $(root)/bin/code_check
 
 #test_omp.x: test_omp.f90 
 #	$(FC) -openmp -O test_omp.f90  -o ../bin/test_omp.x
