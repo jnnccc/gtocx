@@ -5,7 +5,7 @@ real*8 d2a
 character*30:: ctemp 
 integer*8:: i
 d2a=dacos(-1.d0)
-OPEN(22,FILE='stars.txt',STATUS='old')
+OPEN(22,FILE='database/stars.txt',STATUS='old')
 READ(22,*)ctemp
 do i=1,100001
     stars(i)%id=i-1
