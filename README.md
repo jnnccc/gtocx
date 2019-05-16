@@ -5,20 +5,11 @@
 4. ship propagation
 
 ## files 
-./compile          compile file
-./force_driv.f90   two order differential equation
-./gtoc_test        executive file
-./init.f90         integrator initiation
-./libksg.a         ksg integrator
-./module.f90       common block
-./module_mod.mod
-./propag.f90       propagation
-./readme.md        this file
-./read_stars.f90   read stars database
-./star_state.f90   get star state at time t
-./stars.txt        stars database
-./test.f90         test program
+1. ./src/force_driv.f90         two order differential equation
+2. ./src/init.f90               integrator initiation
+3. ./src/module.f90             common block
+4. ./src/propag.f90             ship propagation
+5. ./src/read_stars.f90         read stars database
+6. ./src/star_state.f90         read stars database
+7. ./src/test.f90               code check 
 
-## todo
-write a make file
-add the ksg code
