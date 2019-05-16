@@ -1,0 +1,4 @@
+#! /bin/bash
+
+ifort -O2 -g -traceback -openmp -assume byterecl -CB module.f90 init.f90 read_stars.f90 star_state.f90 propag.f90 \
+force_driv.f90 test.f90 libksg.a -o gtoc_test
