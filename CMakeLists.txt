@@ -18,3 +18,9 @@ set(GTOCX_SRCS
 add_executable(${PROJECT_NAME} ${GTOCX_SRCS})
 target_compile_options(${PROJECT_NAME} PRIVATE "-ffree-line-length-none")
 target_link_libraries(${PROJECT_NAME} ksg)
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/database ${CMAKE_CURRENT_BINARY_DIR}/database
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/database
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Copying database folder")
