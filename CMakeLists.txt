@@ -13,7 +13,7 @@ set(GTOCX_SRCS
 	src/propag.f90
 	src/read_stars.f90
 	src/star_state.f90
-	src/test.f90)
+	src/main.f90)
 
 add_executable(${PROJECT_NAME} ${GTOCX_SRCS})
 target_compile_options(${PROJECT_NAME} PRIVATE "-ffree-line-length-none")
