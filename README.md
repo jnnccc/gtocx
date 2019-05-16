@@ -1,7 +1,11 @@
-## introduction  
+## Introduction
+Code of ships and pods trajectory propagation for GTOCX competition 
+
+
+## functions  
 1. modules to read stars.txt
-2. some unit conversion[km|s-->kpc/myr] 
-3. compute the state of stars at time t
+2. some unit conversion[km|s-->kpc/myr,dgree-->riadan] 
+3. compute the state[x,y,z,vx,vy,vz] of stars at time t
 4. ship propagation
 
 ## files 
