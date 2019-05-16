@@ -1,0 +1,18 @@
+
+force_driv.o: \
+	module.o 
+
+init.o: \
+	module.o 
+
+propag.o: \
+	module.o 
+
+read_stars.o: \
+	module.o 
+
+star_state.o: \
+	module.o 
+
+test.o: \
+	module.o 

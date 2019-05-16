@@ -1,0 +1,34 @@
+# Makefile options for the INTEL compiler,not  optimized
+
+# Fortran compiler
+FC=gfortran
+F77=f77
+#FC=gfortran
+# Options for Fortran compiler for debugging:
+#FFLAGS=  -cm -O -mp1 -assume byterecl  
+#FFLAGS=  -pg -auto -debug -traceback -openmp -assume byterecl -CB #-Wl --end-group  
+#FFLAGS=  -fast -openmp   #-traceback  #-assume byterecl -CB
+FFLAGS= -ffree-line-length-512 -fbacktrace -g -fopenmp -Wall -Wextra  
+#FFLAGS=  -ipo 
+#FFLAGS=  -g -openmp -traceback
+# "ranlib" command: if it is not needed, use "RANLIB=touch"
+RANLIB=ranlib
+#AR=ar
+AR=xiar
+#VPATH=../include
+#mkllib = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread 
+#slatec = /home/jnc/soft/slatec/ordinary/src/make/libslatec.a
+flink = #-lspice  -lslatec -lsofa -lstarpac -lnl2sol -ldatapac -lgfortran #-lpgplot -lspline -lstarpac -lrkf #-ltcmalloc
+
+# Implicit rule for compiling f90  files
+.SUFFIXES: .f90 .f .cpp
+
+%.o : %.mod
+
+.f90.o:
+	$(FC) $(FFLAGS) -c $*.f90 -o $*.o 
+.f.o:
+	$(FC) $(FFLAGS) -c $*.f -o $*.o
+.cpp.o:
+	$(CC) $(CFLAGS) -c $*.cpp -o $*.o
+

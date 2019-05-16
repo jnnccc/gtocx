@@ -17,7 +17,7 @@ call star_state(id,t0,x0)
 do i=1,100
 t1=t0+dble(i)*1d0
 call propag(t0,x0,t1,x1)
-write(*,'(6e)')x0
-write(*,'(6e)')x1
+write(*,'(6e28.10)')x0
+write(*,'(6e28.10)')x1
 enddo
 end

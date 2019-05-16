@@ -18,7 +18,7 @@ real(dp), parameter :: vel=kpc/myr
 
 
 TYPE stars1
-    integer:: id       !星历目标名称
+    integer*8:: id       !星历目标名称
     real*8:: par(5)
 end type stars1
 
