@@ -1,2 +1,0 @@
-MODDEP= -I./ -I../src/ -I../src/include/
-FFLAGS+=$(MODDEP)
