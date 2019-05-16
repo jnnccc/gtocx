@@ -2,7 +2,16 @@ cmake_minimum_required(VERSION 3.10)
 
 project(gtocx)
 
-enable_language(Fortran)
+# Search path for CMake include files.
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
+	${CMAKE_CURRENT_SOURCE_DIR}/cmake
+	${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/gtocx-compilers)
+
+include(CompilerFlags)
+
+# Default to debug build
+#set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/ksg)
 

@@ -20,4 +20,4 @@ set(KSG_SRCS
 	src/ut2ksg.f)
 
 add_library(${PROJECT_NAME} STATIC ${KSG_SRCS})
-
+target_compile_options(${PROJECT_NAME} PRIVATE "-ffixed-line-length-none")

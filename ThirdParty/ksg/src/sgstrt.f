@@ -21,10 +21,11 @@ c     alim       convergence criterion for starting.
 c     nloop      number of iterations starter used to converge solution
 c     h          step size to be used.
 c
-      implicit real *8 (a-h,o-z)
-      real *16 sum1,sum2,g(16,16),b(16,16)
-      dimension x(n),v(n),xf(n),vf(n),work(n,m),alim(3),f(n,m),gmid(16),
-     *   bmid(16),xfs(3),vfs(3)
+      integer :: n, m, nloop
+      real(8) :: x(n), v(n), t, f(n,m), work(n, m), xf(n), vf(n), alim(3), h, anorm
+      dimension gmid(16), bmid(16),xfs(3),vfs(3)
+
+      real(16) sum1,sum2,g(16,16),b(16,16)
 c
       external deriv
 c
@@ -34,8 +35,8 @@ c
       nmm = m-mids
       nmm2 = nmm*nmm
       tf = t+mid*h
-      xmag = dsqrt(x(1)**2+x(2)**2+x(3)**2)
-      vmag = dsqrt(v(1)**2+v(2)**2+v(3)**2)
+      xmag = sqrt(x(1)**2+x(2)**2+x(3)**2)
+      vmag = sqrt(v(1)**2+v(2)**2+v(3)**2)
 c
 c...use taylor series to predict node states and make function
 c   evaluations and return predicted final conditions x(tf)
@@ -119,7 +120,7 @@ c
       do 90 i = 1,3
          anorm = anorm+((xf(i)-xfs(i))/xmag)**2+((vf(i)-vfs(i))/vmag)**2
    90 continue
-      anorm = dsqrt(anorm)
+      anorm = sqrt(anorm)
 c
 c...check for convergence
 c

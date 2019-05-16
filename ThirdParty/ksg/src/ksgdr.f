@@ -44,8 +44,13 @@ c             the starter does not converge.
 c     nloop   number of iterations starter needed to attain convergence
 c             integrated along with position and velocity
 c
-      implicit real *8 (a-h,o-z)
+      implicit none
+      integer :: n, m, steps, iflag, nloop
+      real(8) :: h, tin, tout, x, xd, deriv, tsave, tmin, tmax, ts, s, sd, work, f, alim
       dimension x(n),xd(n),s(n),sd(n),work(n,m),f(n,m),alim(3)
+      
+      integer :: ncall, nsteps
+      real(8) :: tato, tito
 c
 c
       external deriv
@@ -95,7 +100,7 @@ c
 c
 c...integrate past tout
 c
-   30 ncall = idint(tato/h)+1
+   30 ncall = int(tato/h)+1
       nsteps = 0
 c
    40 nsteps = nsteps+1
