@@ -3,7 +3,7 @@ c
 c...purpose:  switch integration vector from casmord to KSG format
 c
       implicit real *8 (a-h,o-z)
-      dimension x(6),save(3)
+      dimension x(neqs),save(3)
 c
       save(1) = x(4)
       save(2) = x(5)
