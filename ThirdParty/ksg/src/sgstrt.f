@@ -21,11 +21,14 @@ c     alim       convergence criterion for starting.
 c     nloop      number of iterations starter used to converge solution
 c     h          step size to be used.
 c
+      implicit none
+
       integer :: n, m, nloop
       real(8) :: x(n), v(n), t, f(n,m), work(n, m), xf(n), vf(n), alim(3), h, anorm
-      dimension gmid(16), bmid(16),xfs(3),vfs(3)
 
-      real(16) sum1,sum2,g(16,16),b(16,16)
+      integer :: iflag, i, im1, im2, j, k, l, mp1, nmm, nmm2, nmm3, mid, mids
+      real(16) :: sum1, sum2, g(16,16), b(16,16)
+      real(8) :: tf, vmag, xmag, gmid(16), bmid(16), xfs(3),vfs(3)
 c
       external deriv
 c

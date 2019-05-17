@@ -46,8 +46,7 @@ c             integrated along with position and velocity
 c
       implicit none
       integer :: n, m, steps, iflag, nloop
-      real(8) :: h, tin, tout, x, xd, deriv, tsave, tmin, tmax, ts, s, sd, work, f, alim
-      dimension x(n),xd(n),s(n),sd(n),work(n,m),f(n,m),alim(3)
+      real(8) :: h, tin, tout, x(n), xd(n), deriv, tsave, tmin, tmax, ts, s(n), sd(n), work(n,m), f(n,m), alim(3)
       
       integer :: ncall, nsteps
       real(8) :: tato, tito
