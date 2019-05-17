@@ -13,7 +13,7 @@ make -j12
 ## Functions  
 
 1. modules to read stars.txt
-2. some unit conversion[km|s-->kpc/myr,dgree-->riadan] 
+2. some units conversion[km|s-->kpc/myr,dgree-->radian] 
 3. compute the state[x,y,z,vx,vy,vz] of stars at time t
 4. ship propagation using KSG integrator
 
