@@ -15,7 +15,7 @@ if (NOT ("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "GNU"))
 message(FATAL_ERROR "Unknown compiler ${CMAKE_Fortran_COMPILER}, please add optimization flags for it into CompilerFlags.cmake")
 endif ()
 
-set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fdefault-real-8 -finit-local-zero")
+set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -finit-local-zero")
 
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DNDEBUG -g -ffast-math")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG -g -ffast-math")
