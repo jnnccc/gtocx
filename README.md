@@ -13,13 +13,13 @@ make -j12
 ## Functions  
 
 1. modules to read stars.txt
-2. some unit conversion[km|s-->kpc/myr,dgree-->riadan] 
+2. some unit conversions[km/s-->kpc/myr, degree-->radian] 
 3. compute the state[x,y,z,vx,vy,vz] of stars at time t
 4. ship propagation using KSG integrator
 
 ## Files 
 
-1. ./src/force_driv.f90         two order differential equation
+1. ./src/force_driv.f90         2nd order differential equation
 2. ./src/init.f90               integrator initiation
 3. ./src/module.f90             common block
 4. ./src/propag.f90             ship propagation
