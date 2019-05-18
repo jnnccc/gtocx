@@ -15,10 +15,12 @@ call star_state(id, 10.d0, x)
 ! Ships propagation  
 call integrator_init
 
-id = 0
+id = 123
 t0 = 0.d0 ! start from Sol
 call star_state(id, t0, x0)
-
+x0(4)=x0(4)+300.d0/vel
+x0(5)=x0(5)+500.d0/vel
+x0(6)=x0(6)+500.d0/vel
 do i = 1, 100
   t1 = t0 + dble(i) * 1d0
   call propag(t0, x0, t1, x1)
