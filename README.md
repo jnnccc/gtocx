@@ -7,7 +7,10 @@ mkdir build
 cd build
 cmake ..
 make -j12
-./gtocx
+../
+mkdir output
+./build/gtocx
+./build/statistics 90
 ```
 
 ## Functions  
@@ -28,5 +31,6 @@ ship propagation using KSG integrator
 xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 <mrow><mi>R</mi><mi>,</mi><mi>i</mi><mi>,</mi><mi>&#937;</mi><mi>,</mi><mi>&#966;</mi></mrow></math>] at time t[myr]
 + ./src/main.f90               checking code 
++ ./src/statistics.f90         stars statistics
 ```
 

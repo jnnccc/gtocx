@@ -13,7 +13,7 @@ call read_stars
 do i=1,n_stars
     id=i-1
     call star_state(id, t0, x0)
-    write(fid1,'(6e22.9)') x0
+    write(fid1,'(7e20.11)') x0,atan2(x0(2),x0(1))*dpr
 enddo
 close (fid1)
 
