@@ -25,7 +25,9 @@ ship propagation using KSG integrator
 ./src/module.f90             common block
 ./src/propag.f90             ship propagation
 ./src/read_stars.f90         read stars database
-./src/star_state.f90         compute star state[x,y,z,vx,vy,vz][kpc|myr] from [$R,i,\Omega,\phi$] at time t[myr]
+./src/star_state.f90         compute star state[x,y,z,vx,vy,vz][kpc|myr] from [<math
+xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><mi>R</mi><mi>,</mi><mi>i</mi><mi>,</mi><mi>&#937;</mi><mi>,</mi><mi>&#966;</mi></mrow></math>] at time t[myr]
 ./src/main.f90               checking code 
 ```
 
