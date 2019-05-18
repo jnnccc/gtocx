@@ -21,20 +21,20 @@ c     alim       convergence criterion for starting.
 c     nloop      number of iterations starter used to converge solution
 c     h          step size to be used.
 c
+      implicit none
+
       integer :: n, m, nloop
       real(8) :: x(n), v(n), t, f(n,m), work(n, m), xf(n), vf(n), alim(3), h, anorm
-      dimension gmid(16), bmid(16),xfs(3),vfs(3)
 
-      real(16) sum1,sum2,g(16,16),b(16,16)
+      integer :: iflag, i, im1, im2, j, k, l, nmm, nmm2, nmm3
+      real(16) :: sum1, sum2, g(16,16), b(16,16)
+      real(8) :: tf, vmag, xmag, gmid(16), bmid(16), xfs(3),vfs(3)
 c
       external deriv
 c
-      mp1 = m+1
-      mid = m/2
-      mids = mp1/2
-      nmm = m-mids
+      nmm = m - (m+1)/2
       nmm2 = nmm*nmm
-      tf = t+mid*h
+      tf = t+m/2*h
       xmag = sqrt(x(1)**2+x(2)**2+x(3)**2)
       vmag = sqrt(v(1)**2+v(2)**2+v(3)**2)
 c
@@ -47,7 +47,7 @@ c...fill the matrices g and b with the proper coefficients so that
 c   the interpolation of node points during starting may be done
 c   relative to the initial conditions with the back differences
 c   formed at tmax.  the initial conditions are assumed to be at
-c   t = tf - mid*h
+c   t = tf - m/2*h
 c
       do 10 i = 1,m
          call ksgco (m,-dfloat(i-1),1.0d+0,gmid,bmid)
@@ -56,7 +56,7 @@ c
             b(j,i) = real(bmid(j),16)
    10    continue
 c
-      call ksgco (m,-dfloat(mid),1.0d+0,gmid,bmid)
+      call ksgco (m,-dfloat(m/2),1.0d+0,gmid,bmid)
 c
       do 20 i = 1,m
          im1 = i-1
@@ -99,7 +99,7 @@ c
    50       continue
 c
             vf(k) = v(k)+h*sum1
-            xf(k) = x(k)+(i-mids)*h*real(v(k),16)+h*h*sum2
+            xf(k) = x(k)+(i-(m+1)/2)*h*real(v(k),16)+h*h*sum2
    60    continue
 c
          call deriv (t,xf,work(1,j))
