@@ -26,6 +26,7 @@ ship propagation using KSG integrator
 + ./src/init.f90               integrator initiation
 + ./src/module.f90             common block
 + ./src/propag.f90             ship propagation
++ ./src/progag_validator       validator of ship propagation
 + ./src/read_stars.f90         read stars database
 + ./src/star_state.f90         compute star state[x,y,z,vx,vy,vz][kpc|myr] from [<math
 xmlns="http://www.w3.org/1998/Math/MathML" display="block">
