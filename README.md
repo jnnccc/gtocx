@@ -7,7 +7,7 @@ mkdir build
 cd build
 cmake ..
 make -j12
-../
+cd ../
 mkdir output
 ./build/gtocx
 ./build/statistics 90
