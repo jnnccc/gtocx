@@ -28,6 +28,8 @@ do i = 0,100,2
 !  write(*,'(f8.3,6e24.13)') t1, x1
 !  call propag_validator(t0, x0, t1, x1_p)
 !  write(*,'(f8.3,6e18.10)') t1, x1_p - x1
+
+! sol position
     call star_state(id, t1, x0)
      write(*,'(f8.3,6e18.10)') t1, x0
 enddo
