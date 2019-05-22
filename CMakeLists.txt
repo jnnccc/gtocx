@@ -21,7 +21,7 @@ set(GTOCX_SRCS
 	src/init.f90
 	src/module.f90
 	src/propag.f90
-        src/propag_validator.f90
+	src/propag_validator.f90
 	src/read_stars.f90
 	src/star_state.f90)
 set(GTOCX_MAIN
@@ -37,6 +37,7 @@ target_compile_options(statistics PRIVATE "-ffree-line-length-none")
 
 target_link_libraries(${PROJECT_NAME} ksg)
 target_link_libraries(${PROJECT_NAME} odepack)
+target_link_libraries(statistics odepack)
 target_link_libraries(statistics ksg)
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
