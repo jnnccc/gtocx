@@ -15,9 +15,6 @@ call star_state(id, 10.d0, x)
 ! Ships propagation  
 call integrator_init
 
-write(*,*)-pi
-stop
-
 id = 123
 call star_state(id, t0, x0)
 x0(4)=x0(4)+300.d0/vel
