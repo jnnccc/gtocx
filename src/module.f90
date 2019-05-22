@@ -20,6 +20,12 @@ real(dp), parameter :: kpc=3.08567758146719d16
 real(dp), parameter :: myr=3.15576d13
 real(dp), parameter :: vel=kpc/myr
 
+!error function
+real(dp), parameter :: sr=1.d0 !kpc
+real(dp), parameter :: st=pi/16.d0 !kpc
+real(dp), parameter :: Rmax=32.d0 !kpc
+real(dp), parameter :: Rmin=2.d0 !kpc
+
 
 TYPE settle_star1
     integer*8:: N       !定居星个数
