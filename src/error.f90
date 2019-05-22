@@ -47,6 +47,7 @@ sumfr=0.d0
         ri=stars(id)%par(1)         !获取定居星轨道半径
         sumfr=sumfr+f(r,ri,sr)
       enddo
+sumfr=sumfr/dble(settle_star%N)
 endfunction
 
 function sumft(theta)
@@ -60,6 +61,7 @@ sumft=0.d0
         ti=stars(id)%par(5)         !获取定居星最终的极角
         sumft=sumft+f(theta,ti,st)
       enddo
+sumft=sumft/dble(settle_star%N)
 endfunction
 
 function gr(r)
