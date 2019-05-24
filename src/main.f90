@@ -24,14 +24,14 @@ id=0
 do i = 0,100,2
   t0 = 0.d0 ! start from Sol
   t1 = t0 + dble(i) * 1d0
-!  call propag(t0, x0, t1, x1)
+  call propag(t0, x0, t1, x1)
 !  write(*,'(f8.3,6e24.13)') t1, x1
-!  call propag_validator(t0, x0, t1, x1_p)
-!  write(*,'(f8.3,6e18.10)') t1, x1_p - x1
+  call propag_validator(t0, x0, t1, x1_p)
+  write(*,'(f8.3,6e18.10)') t1, x1_p - x1
 
 ! sol position
-    call star_state(id, t1, x0)
-     write(*,'(f8.3,6e18.10)') t1, x0
+!    call star_state(id, t1, x0)
+!     write(*,'(f8.3,6e18.10)') t1, x0
 enddo
 
 end program main
