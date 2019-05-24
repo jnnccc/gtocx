@@ -9,8 +9,8 @@ cmake ..
 make -j12
 cd ../
 mkdir output
-./build/gtocx
-./build/statistics 90
+./gtocx
+./statistics 90
 ```
 
 ## Functions  
