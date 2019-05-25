@@ -15,9 +15,9 @@ subroutine propag_validator(t0, x0, t1, x1)
     x1 = x0
 
     ITOL = 1                ! 1 indicates ATOL is scalar, 2 indicates ATOL is array
-    RTOL = 1e-15             ! Relative tolerance
+    RTOL = 1e-9             ! Relative tolerance
 
-    ATOL = 0            ! Absolute tolerance for each i in Y(i)
+    ATOL = 1e-8            ! Absolute tolerance for each i in Y(i)
 
     ITASK = 1               ! Indicates that DLSODE is to compute output values of y
     ISTATE = 1              ! ISTATE=1 for first call, ISTATE=2 for subsequent calls

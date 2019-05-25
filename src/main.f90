@@ -10,29 +10,27 @@ call read_stars
 
 ! Get star state
 id = 0
-call star_state(id, 10.d0, x)
-
+do id = 0, 100
 ! Ships propagation  
 call integrator_init
-
-id = 0
-call star_state(id, t0, x0)
-!x0(4)=x0(4)+300.d0/vel
-!x0(5)=x0(5)+500.d0/vel
-!x0(6)=x0(6)+500.d0/vel
-id=0
-do i = 0,100,2
+!id = 0
+call star_state(id, 0.d0, x0)
+x0(4)=x0(4)+300.d0/vel
+x0(5)=x0(5)+500.d0/vel
+x0(6)=x0(6)+500.d0/vel
+do i = 0,100
   t0 = 0.d0 ! start from Sol
   t1 = t0 + dble(i) * 1d0
   call propag(t0, x0, t1, x1)
-!  write(*,'(f8.3,6e24.13)') t1, x1
   call propag_validator(t0, x0, t1, x1_p)
-  write(*,'(f8.3,6e18.10)') t1, x1_p - x1
-
-! sol position
-!    call star_state(id, t1, x0)
-!     write(*,'(f8.3,6e18.10)') t1, x0
+!  write(*,'(f8.3,6e18.10)') t1, x1_p - x1
+  if(ANY(ABS(x1_p - x1) > 1e-4))then
+      write(*, *) "Error at time", t1, id
+  else
+      write(*, *) "Error meets requirement at time", t1, id
+  end if
 enddo
+end do
 
 end program main
 
